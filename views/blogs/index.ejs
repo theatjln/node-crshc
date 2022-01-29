@@ -1,0 +1,42 @@
+<!-- EJS TEMPLATES - are processed through the EJS view engine on the server -->
+
+<!-- SERVER SIDE RENDERING -->
+<!-- 
+  view files live on the server, 
+  EJS file is passed through the EJS View Engine to be processed,
+  EJS View Engine looks for any kind of dynamic contents, inside - <%=title %> 
+  then in the end, 
+  EJS View Engine spits out valid html based on the template we wrote
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <!-- TO INCLUDE PARTIALS -->
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <!--  <% name = 'mario' %> -->
+    <!-- to display dynamic content using ejs -->
+
+    <!-- TO INCLUDE PARTIALS -->
+    <!-- %= escapes special characters 
+    and returns string, not html, 
+    %- doesnt -->
+    <%- include('../partials/nav.ejs') %>
+
+    <div class="blogs content">
+      <h2>All Blogs</h2>
+
+      <% if (blogs.length > 0) { blogs.forEach( blog => { %>
+      <a class="single" href="/blogs/<%= blog._id %>">
+        <h3><%= blog.title %></h3>
+        <p><%= blog.snippet %></p>
+      </a>
+      <% }) } else { %>
+      <p>There are no blogs to display...</p>
+      <% } %>
+    </div>
+
+    <!-- TO INCLUDE PARTIALS -->
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

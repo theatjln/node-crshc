@@ -1,0 +1,21 @@
+Video #10
+
+REQUEST TYPES
+- GET - get a resource
+- POST - create new data
+- DELETE - delete data
+- PUT - update existing data
+
+SAMPLE REQUEST TYPES & URLS
+- localhost:3000/blogs    GET     - retrieve all blogs from database
+- localhost:3000/blogs/create    GET    - create a new blog
+- localhost:3000/blogs    POST    - when form submit is clicked in /blogs/create, go this route to post data to the database
+- localhost:3000/blogs/:id    GET    - retrieve a single blog
+- localhost:3000/blogs/:id    DELETE    -  delete a single blog
+- localhost:3000/blogs/:id    PUT    - update a single blog
+
+ROUTE PARAMETERS
+- parts of a route that can change value
+  e.g. localhost:3000/blogs/:id
+        localhost:3000/blogs/654
+        localhost:3000/blogs/hello

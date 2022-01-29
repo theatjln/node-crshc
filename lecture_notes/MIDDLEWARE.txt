@@ -1,0 +1,27 @@
+Video #8
+
+Middleware - code which runs (on the server) between getting a request and sending a response
+
+
+SERVER:
+- app.use(func) - usually used to run middleware code
+- app.get
+
+- app.use(func) - usually used to run middleware code
+
+
+Middleware Examples
+we can create middleware that:
+- log details of every request (logger middleware)
+- checks authentication for protected routes (authentication check middleware)
+- parse JSON data from requests 
+- return 404 pages
+
+
+MORGAN - a logger middleware
+
+
+static - middleware embedded along with expressJS that allows static files to be accessed
+- naturally, static files are protected by the server not to be accessed in the browser
+- to use, app.use(express.static('public'))
+- static files are assets u use in ur site

@@ -1,0 +1,28 @@
+Video #9
+
+NoSQL vs SQL
+
+NoSQL - uses collections, documents [MongoDB]
+SQL - uses tables, Rows, Columns
+
+MONGOOSE, MODELS & SCHEMAS
+Mongoose (third party package) - an ODM library, (ODM stands for Object Document Mapping)
+mongoose makes querying to mongodb easier
+Mongoose sample queries
+  = User model - User.get(), Use.findById()
+  = Blog model - Blog.deleteOne()
+
+SCHEMAS & MODELS
+Schemas - defines the structure of a data/document (properties & property types)
+  User Schema:
+    - name (string), required
+    - age (number)
+    - bio (string), required
+
+  Blog Schema:
+    - title (string), required
+    - snippet (string), required
+    - body (string), required
+
+Models - lets us communicate with database collections
+  Blog Model[Blog Schema]----get, save, delete, etc---->Database Blog Collection

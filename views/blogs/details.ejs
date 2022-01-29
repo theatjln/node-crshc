@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- TO INCLUDE PARTIALS -->
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <%- include('../partials/nav.ejs') %>
+
+    <div class="details content">
+      <h2><%= blog.title %></h2>
+      <div class="content">
+        <p><%= blog.body %></p>
+      </div>
+      <a class="delete" data-doc="<%= blog._id %>"
+        ><img src="/trashcan.svg" alt="delete icon"
+      /></a>
+    </div>
+
+    <!-- TO INCLUDE PARTIALS -->
+    <%- include('../partials/footer.ejs') %>
+
+    <script>
+      const trashcan = document.querySelector("a.delete");
+
+      trashcan.addEventListener("click", (e) => {
+        const endpoint = `/blogs/${trashcan.dataset.doc}`;
+
+        // AJAX REQUEST IN VANILLAJS
+        // when we do ajax request, we cant do redirect in nodejs
+        // we can only send json back to the browser
+        // to make redirect, we can do -- result => res.json({redirect: "/blogs"})
+        // see app.delete("/blogs/:id")
+        fetch(endpoint, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((data) => (window.location.href = data.redirect))
+          .catch((err) => console.log(err));
+      });
+    </script>
+  </body>
+</html>

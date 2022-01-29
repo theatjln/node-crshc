@@ -1,0 +1,8 @@
+Video #11
+
+MVC BASICS
+- Model, View, Controller
+- way of structuring code & files
+- keeps code more modular, reusable & easy to read
+
+Model -------> Controller -------> View
